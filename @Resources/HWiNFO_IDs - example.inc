@@ -170,8 +170,8 @@ HW_SMART_Airflow_Temp = 0x1000001 ; Temperature
 HW_SMART_Remaining_Life = 0x7000000 ; Usage
 HW_SMART_Failure = 0x8000000 ; Other
 HW_SMART_Warning = 0x8000001 ; Other
-HW_SMART_Total_Writes_Host = 0x8000002 ; Other
-HW_SMART_Total_Reads_Host = 0x8000004 ; Other
+HW_SMART_Total_Host_Writes = 0x8000002 ; Other
+HW_SMART_Total_Host_Reads = 0x8000004 ; Other
 
 
 ; Entries - Drive
@@ -193,28 +193,45 @@ HW_GPU_Clk = 0x6000000 ; Clock
 HW_GPU_Clk_Mem = 0x6000004 ; Clock
 HW_GPU_Clk_Vid = 0x6000005 ; Clock
 
-HW_GPU_Load_Core = 0x7000000 ; Usage
-HW_GPU_Load_MemCon = 0x7000001 ; Usage
-HW_GPU_Load_VidEng = 0x7000002 ; Usage
-HW_GPU_Load_Bus = 0x7000003 ; Usage
+HW_GPU_Usg00_Label = "Core Load"
+HW_GPU_Usg00 = 0x7000000 ; Usage
+HW_GPU_Usg01_Label = "Mem.Ctrl Load"
+HW_GPU_Usg01 = 0x7000001 ; Usage
+HW_GPU_Usg02_Label = "Vid.Eng Load"
+HW_GPU_Usg02 = 0x7000002 ; Usage
+HW_GPU_Usg03_Label = "Bus Load"
+HW_GPU_Usg03 = 0x7000003 ; Usage
+HW_GPU_Usg04_Label = "Memory Usage"
+HW_GPU_Usg04 = 0x7000008 ; Usage
+HW_GPU_Usg05_Label = "D3D Usage"
+HW_GPU_Usg05 = 0x7000009 ; Usage
+HW_GPU_Usg06_Label = "Vid.Dec0 Usage"
+HW_GPU_Usg06 = 0x700000a ; Usage
+HW_GPU_Usg07_Label = "Vid.Enc0 Usage"
+HW_GPU_Usg07 = 0x7000014 ; Usage
+HW_GPU_Usg08_Label = "Vid.Enc1 Usage"
+HW_GPU_Usg08 = 0x7000015 ; Usage
+HW_GPU_Usg09_Label = "Compute_0 Usage"
+HW_GPU_Usg09 = 0x700001e ; Usage
+HW_GPU_Usg0A_Label = "Compute_1 Usage"
+HW_GPU_Usg0A = 0x700001f ; Usage
+HW_GPU_Usg0B_Label = "VR Usage"
+HW_GPU_Usg0B = 0x7000028 ; Usage
 
-HW_GPU_Usg_Mem = 0x7000008 ; Usage
-HW_GPU_Usg_D3D = 0x7000009 ; Usage
-HW_GPU_Usg_VidDec0 = 0x700000a ; Usage
-HW_GPU_Usg_VidEnc0 = 0x7000014 ; Usage
-HW_GPU_Usg_VidEnc1 = 0x7000015 ; Usage
-HW_GPU_Usg_Comp0 = 0x700001e ; Usage
-HW_GPU_Usg_Comp1 = 0x700001f ; Usage
-HW_GPU_Usg_VR = 0x7000028 ; Usage
-HW_GPU_Usg_Fan = 0x8000000 ; Other
+HW_GPU_PL00 = 0x800000a ; Other ; Performance Limit(PL)
+HW_GPU_PL00_Label = "Pow."
+HW_GPU_PL01 = 0x800000b ; Other
+HW_GPU_PL01_Label = "Ther#CRLF#mal"
+HW_GPU_PL02 = 0x800000c ; Other ; Reliability Voltage
+HW_GPU_PL02_Label = "Volt#CRLF#Rel."
+HW_GPU_PL03 = 0x800000d ; Other ; Max.Operating Voltage
+HW_GPU_PL03_Label = "Volt#CRLF#Max."
+HW_GPU_PL04 = 0x800000e ; Other ; Utilization
+HW_GPU_PL04_Label = "Util"
 
-HW_GPU_PL_Pow = 0x800000a ; Other ; Performance Limit(PL)
-HW_GPU_PL_Temp = 0x800000b ; Other
-HW_GPU_PL_RelyVolt = 0x800000c ; Other ; Reliability Voltage
-HW_GPU_PL_MaxOprVolt = 0x800000d ; Other ; Max.Operating Voltage
-HW_GPU_PL_Util = 0x800000e ; Other ; Utilization
+HW_GPU_Fan = 0x0800000 ; Usage
 
-HW_GPU_Pow_Norm_Percent = 0x80000fa ; Other ; Total GPU Power (normalized) [% of TDP]
+HW_GPU_Pow_Percent_Norm = 0x80000fa ; Other ; Total GPU Power (normalized) [% of TDP]
 HW_GPU_Pow_Percent = 0x80000fb ; Other
 HW_GPU_Pow = 0x5000000 ; Power
 
