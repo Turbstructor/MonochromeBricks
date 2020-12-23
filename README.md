@@ -18,7 +18,11 @@ And thus, with those skins I'm just playing with how to use HWiNFO and Rainmeter
 2. Download this as .zip
 3. Use .rmskin to install skins and plugins directly
 4. Open `@Resources\HWiNFOSharedMemoryViewer.exe` and edit instances and entry IDS in `@Resources\HWiNFO_IDs.inc` with IDs in 'Sensor Details' and 'Entry Details'.
-   
+
+![Example Screenshot No.2](http://raw.github.com/Turbstructor/MonochromeBricks/master/example.png)
+
+This is a exapmle screenshot of `@Reources\HWiNFOSharedMmemoryViewer.exe`: Take a look at `Sensor Details > ID`, `Sensor Details > Instance`, and `Entry Details > ID`.
+
 ---
 
 These files are far from complete, as... / What I thought I need to fix is...
