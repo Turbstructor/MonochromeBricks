@@ -1,4 +1,4 @@
-![Example Screenshot](http://www.hwinfo.com/forum/Forum-Rainmeter-plug-in)
+![Example Screenshot](http://raw.github.com/Turbstructor/MonochromeBricks/mater/example.png)
 
 # MonochromeBricks
 A Set of Rainmeter Skins, majorly about Hardware Status provided by HWiNFO.
