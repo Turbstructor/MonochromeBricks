@@ -16,6 +16,12 @@ HW_CPU_DTS_Inst = 0x0
 HW_CPU_Enh_ID = 0x0f0002a00
 HW_CPU_Enh_Inst = 0x0
 
+HW_CPU_CState_ID = 0xf0000302
+HW_CPU_CState_Inst = 0x0
+
+HW_CPU_PLReasons_ID = 0xf0000900
+HW_CPU_PLReasons_Inst = 0x0
+
 HW_Memory_Timing_ID = 0xf0000301
 HW_Memory_Timing_Inst = 0x1
 
@@ -44,6 +50,8 @@ HW_Sys_VM_Load = 0x8000002 ; Other
 HW_Sys_PM_Used = 0x8000003 ; Other
 HW_Sys_PM_Avail = 0x8000004 ; Other
 HW_Sys_PM_Load = 0x8000005 ; Other
+
+HW_Sys_Pagefile_Usage = 0x8000006 ; Other
 
 
 ; Entries - CPU
@@ -96,15 +104,15 @@ HW_CPU_Ratio_C3 = 0x8000003 ; Other
 
 
 ; Entries - CPU (DTS)
-HW_CPU_DTS_Temp_C0 = 0x1000000 ; Temperature
-HW_CPU_DTS_Temp_C1 = 0x1000001 ; Temperature
-HW_CPU_DTS_Temp_C2 = 0x1000002 ; Temperature
-HW_CPU_DTS_Temp_C3 = 0x1000003 ; Temperature
-; HW_CPU_DTS_Temp_C4 = 0x1000004 ; Temperature
-; HW_CPU_DTS_Temp_C5 = 0x1000005 ; Temperature
-; HW_CPU_DTS_Temp_C6 = 0x1000006 ; Temperature
-; HW_CPU_DTS_Temp_C7 = 0x1000007 ; Temperature
-HW_CPU_DTS_Temp = 0x10000fe ; Temperature
+HW_CPU_DTS_Temp_Max_C0 = 0x1000000 ; Temperature
+HW_CPU_DTS_Temp_Max_C1 = 0x1000001 ; Temperature
+HW_CPU_DTS_Temp_Max_C2 = 0x1000002 ; Temperature
+HW_CPU_DTS_Temp_Max_C3 = 0x1000003 ; Temperature
+; HW_CPU_DTS_Temp_Max_C4 = 0x1000004 ; Temperature
+; HW_CPU_DTS_Temp_Max_C5 = 0x1000005 ; Temperature
+; HW_CPU_DTS_Temp_Max_C6 = 0x1000006 ; Temperature
+; HW_CPU_DTS_Temp_Max_C7 = 0x1000007 ; Temperature
+; HW_CPU_DTS_Temp = 0x10000fe ; Temperature / Not available
 HW_CPU_DTS_Temp_Max = 0x10000ff ; Temperature
 
 HW_CPU_DTS_Thrt_Temp_C0 = 0x8000000 ; Other
@@ -146,6 +154,46 @@ HW_CPU_Enh_VoltOff_GT = 0x2000002 ; Voltage
 HW_CPU_Enh_VoltOff_CLR = 0x2000003 ; Voltage
 HW_CPU_Enh_Pow_Pkg = 0x5000000 ; Power
 HW_CPU_Enh_Pow_DRAM = 0x5000003 ; Power
+
+
+; Entries - CPU (C-State Residency)
+HW_CPU_CState_C0_T0 = 0x700000b
+HW_CPU_CState_C0_T1 = 0x700000c
+HW_CPU_CState_C0_T2 = 0x700000d
+HW_CPU_CState_C0_T3 = 0x700000e
+HW_CPU_CState_C0_T4 = 0x700000f
+HW_CPU_CState_C0_T5 = 0x7000010
+HW_CPU_CState_C0_T6 = 0x7000011
+HW_CPU_CState_C0_T7 = 0x7000012
+; HW_CPU_CState_C0_T8 = 0x7000013
+; HW_CPU_CState_C0_T9 = 0x7000014
+; HW_CPU_CState_C0_T10 = 0x7000015
+; HW_CPU_CState_C0_T11 = 0x7000016
+; HW_CPU_CState_C0_T12 = 0x7000017
+; HW_CPU_CState_C0_T13 = 0x7000018
+; HW_CPU_CState_C0_T14 = 0x7000019
+; HW_CPU_CState_C0_T15 = 0x700001a
+
+
+; Entries - CPU (Performance Limit Reasons)
+HW_CPU_PLReasons_IA_00 = 0x8000000 ; Other
+HW_CPU_PLReasons_IA_00_Label = "PROCHOT"
+HW_CPU_PLReasons_IA_01 = 0x8000001 ; Other
+HW_CPU_PLReasons_IA_01_Label = "Thermal Event"
+HW_CPU_PLReasons_IA_02 = 0x8000004 ; Other
+HW_CPU_PLReasons_IA_02_Label = "Graphics Driver"
+HW_CPU_PLReasons_IA_03 = 0x8000006 ; Other
+HW_CPU_PLReasons_IA_03_Label = "Autonomous Util" ; Autonomous Utilization-Based Frequency Control
+HW_CPU_PLReasons_IA_04 = 0x8000008 ; Other
+HW_CPU_PLReasons_IA_04_Label = "VR Thermal Alert"
+HW_CPU_PLReasons_IA_05 = 0x800000a ; Other
+HW_CPU_PLReasons_IA_05_Label = "EDP" ; Electrical Design Point/Other (ICCmax, PL4, SVID, DDR RAPL)
+; HW_CPU_PLReasons_IA_06 = 0x800000b ; Other
+; HW_CPU_PLReasons_IA_06_Label = "PL1" ; Domain-Level PBM PL1
+HW_CPU_PLReasons_IA_06 = 0x800000c ; Other
+HW_CPU_PLReasons_IA_06_Label = "PL1" ; Package-Level RAPL/PBM PL1
+HW_CPU_PLReasons_IA_07 = 0x800000d ; Other
+HW_CPU_PLReasons_IA_07_Label = "PL2 / PL3" ; Package-Level RAPL/PBM PL1
 
 
 ; Memory Timings
@@ -192,6 +240,8 @@ HW_GPU_Fan = 0x3000000 ; Fan
 HW_GPU_Clk = 0x6000000 ; Clock
 HW_GPU_Clk_Mem = 0x6000004 ; Clock
 HW_GPU_Clk_Vid = 0x6000005 ; Clock
+
+HW_GPU_Usg_Mem = 0x7000008 ; Usage
 
 HW_GPU_Usg00_Label = "Core Load"
 HW_GPU_Usg00 = 0x7000000 ; Usage
